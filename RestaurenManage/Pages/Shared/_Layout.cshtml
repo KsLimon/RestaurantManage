@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RestaurenManage</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RestaurenManage.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+
+
+</head>
+<body>
+    <header>
+        <div class="site-branding">
+            <h1 class="site-title"><a href="" rel="home">Kamrus Samad</a></h1>
+            <h2 class="site-description">~~~~~</h2>
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index" style="font-family: 'Herr Von Muellerhoff';color:black;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 24px;">RestaurenManage</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/AdminPage/Login">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <a class="open-button" asp-area="" asp-page="/Customer/Carts"><i style="font-size: large; color:black" class="fa fa-cart-plus"></i></a>
+    <br>
+    <br>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - RestaurenManage - <a href="http://kslimon.github.io/">The Circuit</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <style>
+        .open-button {
+            background-color: seashell;
+            border-radius: 50px;
+            text-align:center;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 73px;
+            right: 28px;
+            width: 60px;
+        }
+
+            .form-container .btn:hover, .open-button:hover {
+                opacity: 1;
+            }
+    </style>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

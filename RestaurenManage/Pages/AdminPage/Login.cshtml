@@ -1,0 +1,62 @@
+﻿@page
+@model RestaurenManage.Pages.AdminPage.LoginModelcs
+@{
+}
+
+<link rel='stylesheet' href='~/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all' />
+
+<h2>Login as Admin</h2><hr />
+
+  @if (TempData["Message"] != null)
+{
+    <partial name="_MessagePartial" />
+}
+
+<form method="post">
+   
+
+    <div class="form-group">
+        Login ID
+        <input class="form-control" type="text" placeholder="Login ID" name="LMLoginID" />
+    </div>
+    <div class="form-group">
+        Password
+        <input type="password" class="form-control" placeholder="Password" name="LMPassword" />
+    </div>
+
+    <a href="" class="float-right"><p class="text-right">Reset Password</p></a>
+
+    <a href="/AdminPage/Signin" class="float-right"><p class="text-right">Signin</p></a>
+
+    <div class="form-group">
+        <button type="submit" class="btn"> Submit </button>
+    </div>
+
+</form>
+<style>
+    .form-control{
+        width:300px;
+    }
+
+    .btn {
+        position:absolute;
+        top:50%;
+        left:32%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #f1f1f1;
+        color: grey;
+        font-size: 15px;
+        padding: 6px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: black;
+        color: white;
+    }
+</style>

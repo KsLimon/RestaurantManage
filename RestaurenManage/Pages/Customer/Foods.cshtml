@@ -1,0 +1,54 @@
+﻿@page "{data?}"
+@model RestaurenManage.Pages.Customer.FoodsModel
+@{
+	var d = new Dictionary<string, string>
+		{
+		   { "key1", "value1" }
+		};
+}
+
+<link rel='stylesheet' href='~/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all' />
+
+<body>
+	<div class="row g-3">
+		@{
+			foreach (var item in Model.FoodModel)
+				{
+					<div class="col-xl-2 col-md-4 col-sm-6">
+					    <div class="bg-white d-block py-4 text-center wow fadeIn product_link bgChangeOnHover" style="visibility: visible; animation-name: fadeIn;">
+
+						    <div class="mt-3 fs-17 position-relative">@item.FoodName</div>
+							
+						
+						@{
+							if (@item.avail == true)
+							{
+								d["key1"] = item.FoodName;
+								
+								<a asp-page="./Foods" asp-page-handler="FoodId" asp-all-route-data="d" style="cursor: pointer;">
+						                <img src=@item.Foodimg class="position-relative" alt="Automotive">
+					     	       
+									<div class="mt-3 fs-17 position-relative">@item.Price -
+									<p style="color:forestgreen; font-weight: bold; display:inline">Add</p>
+									</div>
+									</a>
+								}
+								else
+								{
+										<a href="" style="cursor: pointer;">
+											<img src=@item.Foodimg class="position-relative" alt="Automotive">
+										</a>
+									<div class="mt-3 fs-17 position-relative">@item.Price -
+									<p style="color:firebrick; font-weight: bold; display:inline">Not Available</p>
+									</div>
+								}
+							}
+
+					    </div>
+				</div>
+					}
+				}
+	</div>
+
+</body>

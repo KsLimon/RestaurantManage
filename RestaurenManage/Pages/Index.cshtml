@@ -1,0 +1,57 @@
+﻿@page "{tm?}"
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kamrus Samad Project</title>
+	<link rel='stylesheet' href='~/css/style.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all' />
+</head>
+<body class="home page page-template page-template-template-portfolio page-template-template-portfolio-php">
+	<div id="page">
+		<div class="container">
+			<!-- #masthead -->
+			<div id="content" class="site-content">
+				<div id="primary" class="content-area column full">
+					<main id="main" class="site-main">
+						<div class="grid portfoliogrid">
+
+							@{
+								foreach(var table in Model.TableModel)
+								{
+									<div class="entry-thumbnail">
+
+										<a asp-page="./Customer/Foods" asp-route-tm="@table.TabName"><h1 class="site-title">@table.TabName</h1></a>
+										@{
+											string tabname = table.TabName;
+										}
+										<p>@table.Position</p>
+										<br>
+									</div>
+								}
+							}
+
+						</div>
+						<br />
+
+					</main>
+					<!-- #main -->
+				</div>
+				<!-- #primary 
+			</div>
+			<!-- #content -->
+		</div>
+		<a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+	</div>
+		
+</body>
+
+
+
+</html>
