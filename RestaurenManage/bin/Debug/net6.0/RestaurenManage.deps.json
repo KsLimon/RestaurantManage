@@ -10,6 +10,7 @@
         "dependencies": {
           "Font.Awesome": "5.15.4",
           "FontAwesome.WPF": "4.7.0.9",
+          "KendoUIProfessional.Trial": "2022.3.1109",
           "Microsoft.EntityFrameworkCore": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
@@ -68,6 +69,12 @@
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
           }
+        }
+      },
+      "jQuery/1.9.1": {},
+      "KendoUIProfessional.Trial/2022.3.1109": {
+        "dependencies": {
+          "jQuery": "1.9.1"
         }
       },
       "Microsoft.AspNetCore.Antiforgery/2.1.0": {
@@ -2225,6 +2232,20 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "jQuery/1.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HiX9icLyiJGgiL5EOIn0d1MBPHVV2M9mzWT4mANdniDNR51RvAFTyKEXEd2+5yQJ4PJ5xePOR61Vjj/omQzYcw==",
+      "path": "jquery/1.9.1",
+      "hashPath": "jquery.1.9.1.nupkg.sha512"
+    },
+    "KendoUIProfessional.Trial/2022.3.1109": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pYI0Db2bm1T/kY78r2qPBSd3UH+4rlLMMSOQIUugV20p/qXCDVj+OvjgB+gyRmCKsvC+Wp9NmUcqRcfTKEVXCg==",
+      "path": "kendouiprofessional.trial/2022.3.1109",
+      "hashPath": "kendouiprofessional.trial.2022.3.1109.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/2.1.0": {
       "type": "package",

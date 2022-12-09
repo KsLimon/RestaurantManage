@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestaurenManage.Data;
 
@@ -11,9 +12,11 @@ using RestaurenManage.Data;
 namespace RestaurenManage.Migrations
 {
     [DbContext(typeof(RmanageContext))]
-    partial class RmanageContextModelSnapshot : ModelSnapshot
+    [Migration("20221207042833_updateCart")]
+    partial class updateCart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

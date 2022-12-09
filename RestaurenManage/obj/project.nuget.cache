@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4LYdaTzqyJmrkm2NWKl7kfiM7yz6TfbSaP+7gCWizUD7srpPXzalm183HtXsLzowM/hV2VxCk4vdZaOFwe/5dQ==",
+  "dgSpecHash": "qirwao15RBW6k+lUY/Q1yXHCTYdeYbIN3hsk1RbzSX/SHnd+ijb+3jJcrAit6+6VuL8+cLCEkeO2/7aDapGYHA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\Projects\\RestaurenManage\\RestaurenManage\\RestaurenManage.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\font.awesome\\5.15.4\\font.awesome.5.15.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\jquery\\1.9.1\\jquery.1.9.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\kendouiprofessional.trial\\2022.3.1109\\kendouiprofessional.trial.2022.3.1109.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.1.0\\microsoft.aspnetcore.antiforgery.2.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.0\\microsoft.aspnetcore.authentication.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.1.0\\microsoft.aspnetcore.authentication.core.2.1.0.nupkg.sha512",

@@ -6,7 +6,7 @@ namespace RestaurenManage.Model
 	{
 		[Key]
 		public int Id { get; set; }
-		public int tableid { get; set; }
+		public string TableName { get; set; }
 		public string? Tablepos { get; set; }
 		public string foodname { get; set; }
 		public int foodprice { get; set;}

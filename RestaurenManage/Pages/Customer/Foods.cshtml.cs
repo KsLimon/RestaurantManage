@@ -16,10 +16,8 @@ namespace RestaurenManage.Pages.Customer
 			_context = context;
 		}
 		[BindProperty]
-		public IList<FoodModel> FoodModel { get; set; } 
-
-		[BindProperty]
-		public CartModel Carts { get; set; }
+		public IList<FoodModel> FoodModel { get; set; }
+		public IList<TableModel> TableModel { get; set; }
 
 		public async Task  OnGetAsync(string? tm)
 		{
@@ -35,11 +33,15 @@ namespace RestaurenManage.Pages.Customer
 		}
 
 		public List<FoodModel> Food { get; set; }
+		public List<TableModel> Tables { get; set; }
+
+		//For Uploding from Background
+		public CartModel CartList = new CartModel();
 
 		public async Task<IActionResult> OnGetFoodId(Dictionary<string, string> data)
 		{
 			Food = _context.FoodModel.Where(c => c.FoodName.Equals(data["key1"])).ToList();
-			Debug.WriteLine("*************************************************************");
+			Tables = _context.TableModel.Where(c => c.TabName.Equals(HttpContext.Session.GetString("TableName"))).ToList();
 
 			Debug.WriteLine(Food[0].FoodName);
 			Debug.WriteLine(HttpContext.Session.GetString("TableName"));
@@ -48,17 +50,19 @@ namespace RestaurenManage.Pages.Customer
 			{
 				return Page();
 			}
-			//_context.CartModel.Add(Carts);
-			//await _context.SaveChangesAsync();
+
+
+			CartList.TableName = HttpContext.Session.GetString("TableName");
+			CartList.Tablepos = Tables[0].Position;
+			CartList.foodname = Food[0].FoodName;
+			CartList.foodprice = Food[0].Price;
+			CartList.person = 1;
+
+			_context.CartModel.Add(CartList);
+			await _context.SaveChangesAsync();
 
 			return RedirectToPage("/Customer/Foods");
 		}
 
-		//public void Tablename(string? tm)
-		//{
-		//	TableName = tm;
-		//	Debug.WriteLine(tm);
-		//	Debug.WriteLine(TableName);
-		//}
 	}
 }

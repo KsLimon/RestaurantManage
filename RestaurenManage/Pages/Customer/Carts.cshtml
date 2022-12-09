@@ -1,10 +1,42 @@
 ﻿@page
+@using Kendo.Mvc.UI
 @model RestaurenManage.Pages.Customer.CartsModel
 @{
 }
 <link rel='stylesheet' href='~/css/style.css' type='text/css' media='all' />
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all' />
 
-<a>
-<h1>I am in cart pages.</h1>
-</a>
+<div>
+    
+    @(Html.Kendo().Grid(Model.CartModel)
+        .Name("Grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.TableName).Title("Table").HeaderHtmlAttributes(new { @style = "font-weight:bold;" }).Width(150);
+            columns.Bound(c => c.foodname).Title("Food").HeaderHtmlAttributes(new { @style = "font-weight:bold;" }).Width(150);
+            columns.Bound(c => c.foodprice).Title("Price").HeaderHtmlAttributes(new { @style = "font-weight:bold;" }).Width(150);
+            columns.Bound(c => c.person).Title("Person").HeaderHtmlAttributes(new { @style = "font-weight:bold;" }).Width(150);
+            columns.Template("<a class='btnelement' > - </a>");
+        })
+        .ToolBar(toolbar => toolbar.Search())
+        .Pageable(pageable => pageable.ButtonCount(10))
+        .Navigatable()
+        )
+</div>
+
+<style>
+    .btnelement {
+        background-color: Crimson;  
+        border-radius: 5px;
+        color: white;
+        padding: .5em;
+        text-decoration: none;
+}
+
+        .btnelement:focus,
+        .btnelement:hover {
+            background-color: FireBrick;
+            color: White;
+    }
+
+</style>

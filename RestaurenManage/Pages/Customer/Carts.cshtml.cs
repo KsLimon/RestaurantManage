@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using RestaurenManage.Model;
 using System.Diagnostics;
 
 namespace RestaurenManage.Pages.Customer
@@ -12,10 +14,15 @@ namespace RestaurenManage.Pages.Customer
         {
             _context = context;
         }
-		public void onGetFood_Id(int? id)
+		[BindProperty]
+		public IList<CartModel> CartModel { get; set; } = default!;
+
+        public async Task OnGetAsync()
 		{
-			Debug.WriteLine("*************************************************************");
-			Debug.WriteLine(id);
+			if (_context.FoodModel != null)
+			{
+				CartModel = await _context.CartModel.ToListAsync();
+			}
 		}
 	}
 }
